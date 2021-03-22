@@ -17,8 +17,7 @@ class FetchThreadCountry(BaseFetchProcess):
             url = f'https://restcountries.eu/rest/v2/region/{region}'
             url_list.append(url)
         with futures.ThreadPoolExecutor() as executor:
-            responses = executor.map(self.fetch_url, url_list)
-        return responses
+            executor.map(self.fetch_url, url_list)
 
     def fetch_url(self, url: str) -> None:
         try:
