@@ -6,7 +6,7 @@ App that generates a pandas dataframe by fetching the
 ## Requirements
 Python3.7 or greater.
 
-To run the django app use the python package manager [pipenv](https://pipenv-es.readthedocs.io/es/latest/).
+Use the python package manager [pipenv](https://pipenv-es.readthedocs.io/es/latest/).
 
 ## Installation
 
