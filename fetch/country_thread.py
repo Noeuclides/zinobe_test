@@ -11,7 +11,7 @@ logging.getLogger().setLevel(logging.INFO)
 
 class FetchThreadCountry(BaseFetchProcess):
 
-    def fetch_regions(self) -> Generator:
+    def fetch_regions(self) -> None:
         url_list = []
         for region in self.regions_table['Region']:
             url = f'https://restcountries.eu/rest/v2/region/{region}'
