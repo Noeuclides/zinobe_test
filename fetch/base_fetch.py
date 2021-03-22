@@ -44,13 +44,10 @@ class BaseFetchProcess:
         country = json_resp[index]
         lang = country.get('languages')
         lang_name = lang[0].get('name')
-        self.append_values('City Name', country.get('name'))
-        self.append_values('Languaje', self.encrypt(lang_name))
+        self.regions_table['City Name'].append(country.get('name'))
+        self.regions_table['Languaje'].append(self.encrypt(lang_name))
         t = (time.perf_counter() - init_time) * 1000
-        self.append_values('Time', f'{t:.2f} ms')
-
-    def append_values(self, key: str, value: Any) -> None:
-        self.regions_table[key].append(value)
+        self.regions_table['Time'].append(f'{t:.2f} ms')
 
     def create_df(self) -> DataFrame:
         return pd.DataFrame(self.regions_table, columns=self.COLUMNS)
